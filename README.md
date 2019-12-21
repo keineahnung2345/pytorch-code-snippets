@@ -26,6 +26,23 @@ model.eval()
 print(model)
 ```
 
+## export model to onnx
+[convert-pytorch-onnx](https://michhar.github.io/convert-pytorch-onnx/)
+```python
+import torch
+import torchvision.models as models
+
+model = models.shufflenet_v2_x0_5(pretrained=True)
+
+# Create some sample input in the shape this model expects
+# the expected input size can be found at https://pytorch.org/hub/pytorch_vision_squeezenet/
+dummy_input = torch.randn(1, 3, 224, 224)
+
+# Use the exporter from torch to convert to onnx 
+# model (that has the weights and net arch)
+torch.onnx.export(model, dummy_input, "shufflenet.onnx", verbose=True)
+```
+
 ## convert into one-hot encoding
 [Convert int into one-hot format](https://discuss.pytorch.org/t/convert-int-into-one-hot-format/507/4)
 ```py
