@@ -35,7 +35,7 @@ import torchvision.models as models
 model = models.shufflenet_v2_x0_5(pretrained=True)
 
 # Create some sample input in the shape this model expects
-# the expected input size can be found at https://pytorch.org/hub/pytorch_vision_squeezenet/
+# the expected input size can be found at https://pytorch.org/hub/pytorch_vision_shufflenet_v2/
 dummy_input = torch.randn(1, 3, 224, 224)
 
 # Use the exporter from torch to convert to onnx 
