@@ -1,6 +1,31 @@
 # pytorch-code-snippets
 Some useful pytorch code snippets
 
+## save model and load model
+[SAVING AND LOADING MODELS](https://pytorch.org/tutorials/beginner/saving_loading_models.html)
+
+save model: 
+```python
+import torch
+import torchvision.models as models
+
+# Use an existing model from Torchvision, note it 
+# will download this if not already on your computer (might take time)
+model = models.shufflenet_v2_x0_5(pretrained=True)
+torch.save(model.state_dict(), "shufflenet.pth")
+```
+
+load model:
+```py
+import torch
+import torchvision.models as models
+
+model = models.shufflenet_v2_x0_5()
+model.load_state_dict(torch.load("shufflenet.pth"))
+model.eval()
+print(model)
+```
+
 ## convert into one-hot encoding
 [Convert int into one-hot format](https://discuss.pytorch.org/t/convert-int-into-one-hot-format/507/4)
 ```py
