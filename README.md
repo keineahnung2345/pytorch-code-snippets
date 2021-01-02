@@ -40,6 +40,18 @@ print(heapq.nlargest(10, output[0]))
 print(heapq.nlargest(10, torch.nn.functional.softmax(output[0], dim=0)))
 ```
 
+[What does model.eval() do in pytorch?](https://stackoverflow.com/questions/60018578/what-does-model-eval-do-in-pytorch)
+```python
+model.eval()
+
+with torch.no_grad():
+    # ...
+    out_data = model(data)
+
+# change back to training mode
+model.train()
+```
+
 ## save model and load model
 [SAVING AND LOADING MODELS](https://pytorch.org/tutorials/beginner/saving_loading_models.html)
 
