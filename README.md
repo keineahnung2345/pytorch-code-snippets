@@ -135,3 +135,10 @@ tensor([[0., 1., 0., 0., 0., 0.],
         [0., 0., 0., 1., 0., 0.]])
 """
 ```
+
+## convert a tensor to a numpy array
+[Pytorch tensor to numpy array](https://stackoverflow.com/questions/49768306/pytorch-tensor-to-numpy-array)
+```python
+tsr = torch.Tensor([1,2,3]) #tensor([1., 2., 3.])
+tsr.cpu().detach().numpy() #array([1., 2., 3.], dtype=float32)
+```
